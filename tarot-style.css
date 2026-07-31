@@ -1,0 +1,340 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+  background:#fff0f5;
+  text-align:center;
+  margin:0;
+  padding:20px 14px 40px;
+  color:#6b4b2a;
+}
+
+.page-title{
+  font-size:28px;
+  font-weight:bold;
+  line-height:1.4;
+  margin:8px 0 18px;
+}
+
+.box{
+  width:92%;
+  max-width:680px;
+  margin:0 auto 18px;
+  background:rgba(255,255,255,0.92);
+  border-radius:28px;
+  padding:22px 16px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.07);
+}
+
+.desc{
+  font-size:18px;
+  line-height:1.8;
+  margin:0 0 16px;
+}
+
+.label{
+  font-size:16px;
+  line-height:1.7;
+  color:#8a6a4a;
+  margin:8px 0 6px;
+}
+
+.main-label{
+  font-size:18px;
+  font-weight:bold;
+  color:#6b4b2a;
+}
+
+select,
+textarea{
+  display:block;
+  width:92%;
+  max-width:520px;
+  margin:6px auto 10px;
+  padding:14px 16px;
+  border-radius:20px;
+  border:2px solid #d8c0ff;
+  background:white;
+  color:#5b3a1e;
+  font-family:inherit;
+  font-size:17px;
+}
+
+textarea{
+  min-height:90px;
+  line-height:1.8;
+  resize:vertical;
+}
+
+select:focus,
+textarea:focus{
+  outline:none;
+  border-color:#b99eea;
+  box-shadow:0 0 0 3px rgba(185,158,234,0.18);
+}
+
+button{
+  border:none;
+  border-radius:28px;
+  padding:14px 18px;
+  font-family:inherit;
+  font-size:18px;
+  font-weight:bold;
+  line-height:1.4;
+  color:white;
+  cursor:pointer;
+  margin:8px 6px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+button:hover{
+  transform:translateY(-1px);
+}
+
+button:active{
+  transform:scale(0.98);
+}
+
+button:disabled{
+  opacity:0.45;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.btn-pink{
+  background:linear-gradient(
+    135deg,
+    #f6b1c7,
+    #eab0f5
+  );
+}
+
+.btn-purple{
+  background:linear-gradient(
+    135deg,
+    #b9a3ff,
+    #9ea8ff
+  );
+}
+
+.btn-next{
+  width:92%;
+  max-width:480px;
+  background:linear-gradient(
+    135deg,
+    #86cdb9,
+    #91bce8,
+    #b89fe7
+  );
+}
+
+.back-btn{
+  background:linear-gradient(
+    135deg,
+    #ffbe73,
+    #f6a65d
+  );
+}
+
+.draw-row,
+.sub-row{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:8px;
+}
+
+.sub-row button{
+  min-width:120px;
+}
+
+.selected-sub{
+  outline:4px solid rgba(255,255,255,0.9);
+  box-shadow:
+    0 0 0 3px rgba(153,112,255,0.25),
+    0 4px 10px rgba(0,0,0,0.08);
+}
+
+.question-box{
+  width:92%;
+  max-width:560px;
+  margin:14px auto 0;
+  padding:16px 14px;
+  background:#f6ecff;
+  border-radius:20px;
+  font-size:18px;
+  line-height:1.8;
+  white-space:pre-line;
+}
+
+.cards-area{
+  width:94%;
+  max-width:760px;
+  margin:0 auto 14px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.card-box{
+  text-align:center;
+}
+
+.card-box img{
+  display:block;
+  width:180px;
+  max-width:28vw;
+  min-width:120px;
+  border-radius:16px;
+  background:white;
+  box-shadow:0 8px 18px rgba(0,0,0,0.14);
+}
+
+.card-name{
+  max-width:190px;
+  margin:10px auto 0;
+  color:#755b42;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.reversed{
+  transform:rotate(180deg);
+}
+
+.next-title{
+  font-size:21px;
+  font-weight:bold;
+  line-height:1.7;
+  margin:0 0 8px;
+}
+
+.next-text{
+  font-size:17px;
+  line-height:1.8;
+  margin:0 0 10px;
+  color:#806149;
+}
+
+.notice{
+  font-size:20px;
+  line-height:1.9;
+  white-space:pre-line;
+}
+
+.small-note{
+  font-size:14px;
+  line-height:1.7;
+  color:#9b7c5c;
+  margin-top:4px;
+}
+
+.important-box{
+  width:92%;
+  max-width:680px;
+  margin:0 auto 18px;
+  padding:15px 14px;
+  background:#fff8fc;
+  border-radius:22px;
+  color:#8a6d58;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.hidden{
+  display:none !important;
+}
+
+#welcomeScreen{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  animation:fadeIn 0.8s ease;
+}
+
+#welcomeScreen img{
+  width:84%;
+  max-width:420px;
+  border-radius:24px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+}
+
+#welcomeText{
+  margin-top:18px;
+  font-size:28px;
+  color:#6b4b2a;
+  line-height:1.6;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+}
+
+@media(max-width:480px){
+  body{
+    padding:16px 10px 32px;
+  }
+
+  .page-title{
+    font-size:24px;
+  }
+
+  .box{
+    width:96%;
+    padding:20px 12px;
+  }
+
+  .desc,
+  .question-box,
+  .notice{
+    font-size:16px;
+  }
+
+  .next-title{
+    font-size:19px;
+  }
+
+  .next-text{
+    font-size:16px;
+  }
+
+  button,
+  textarea,
+  select{
+    font-size:16px;
+  }
+
+  .card-box img{
+    width:150px;
+    max-width:40vw;
+    min-width:110px;
+  }
+
+  .card-name{
+    max-width:155px;
+    font-size:13px;
+  }
+
+  #welcomeText{
+    font-size:24px;
+  }
+}
