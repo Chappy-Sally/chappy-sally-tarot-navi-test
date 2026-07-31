@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>私にもどる質問｜チャッピー＆サリー</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+  background:#fff0f5;
+  color:#6b4b2a;
+  text-align:center;
+  margin:0;
+  padding:20px 14px 40px;
+}
+
+.main-card{
+  width:94%;
+  max-width:680px;
+  margin:0 auto;
+  padding:24px 16px 28px;
+  background:rgba(255,255,255,0.94);
+  border-radius:28px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h1{
+  margin:0 0 14px;
+  color:#6b4b2a;
+  font-size:28px;
+  line-height:1.5;
+}
+
+.intro{
+  margin:0 auto 20px;
+  color:#7b5b39;
+  font-size:17px;
+  line-height:1.8;
+}
+
+.theme-box{
+  width:96%;
+  max-width:570px;
+  margin:16px auto;
+  padding:18px 14px;
+  background:#fffafc;
+  border-radius:22px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.theme-title{
+  margin-bottom:10px;
+  color:#6b4b2a;
+  font-size:18px;
+  font-weight:bold;
+  line-height:1.6;
+}
+
+.theme-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+button{
+  border:none;
+  border-radius:28px;
+  padding:14px 18px;
+  color:white;
+  font-family:inherit;
+  font-size:16px;
+  font-weight:bold;
+  line-height:1.5;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+button:hover{
+  transform:translateY(-1px);
+}
+
+button:active{
+  transform:scale(0.98);
+}
+
+button:disabled{
+  opacity:0.45;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.btn-feeling{
+  background:linear-gradient(
+    135deg,
+    #f5a9c5,
+    #e4a8ed
+  );
+}
+
+.btn-patience{
+  background:linear-gradient(
+    135deg,
+    #9bcfc4,
+    #9ebfe9
+  );
+}
+
+.btn-expectation{
+  background:linear-gradient(
+    135deg,
+    #b5a3f2,
+    #d3a3e5
+  );
+}
+
+.btn-wish{
+  background:linear-gradient(
+    135deg,
+    #f3c978,
+    #f1a675
+  );
+}
+
+.btn-fear{
+  background:linear-gradient(
+    135deg,
+    #94afd9,
+    #aa91d5
+  );
+}
+
+.btn-self{
+  background:linear-gradient(
+    135deg,
+    #efafbb,
+    #d9a5cf
+  );
+}
+
+.btn-all{
+  background:linear-gradient(
+    135deg,
+    #79bfb0,
+    #999ce5,
+    #d394ce
+  );
+}
+
+.selected-theme{
+  outline:4px solid rgba(255,255,255,0.95);
+  box-shadow:
+    0 0 0 3px rgba(151,109,218,0.28),
+    0 4px 10px rgba(0,0,0,0.08);
+}
+
+.question-area{
+  width:96%;
+  max-width:570px;
+  margin:20px auto;
+  padding:22px 16px;
+  background:linear-gradient(
+    135deg,
+    #f6edff,
+    #fff4f9
+  );
+  border-radius:24px;
+}
+
+.question-label{
+  margin-bottom:10px;
+  color:#8b6a8e;
+  font-size:15px;
+  font-weight:bold;
+}
+
+.question-text{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#6b4b2a;
+  font-size:21px;
+  font-weight:bold;
+  line-height:1.8;
+  white-space:pre-line;
+}
+
+.answer-box{
+  width:96%;
+  max-width:570px;
+  margin:16px auto;
+  padding:18px 14px;
+  background:#fffafc;
+  border-radius:22px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.answer-title{
+  margin-bottom:8px;
+  color:#6b4b2a;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.answer-hint{
+  margin-bottom:10px;
+  color:#9a7a5c;
+  font-size:14px;
+  line-height:1.7;
+}
+
+textarea{
+  display:block;
+  width:96%;
+  min-height:140px;
+  margin:0 auto;
+  padding:14px 16px;
+  border:2px solid #e4c5ee;
+  border-radius:18px;
+  background:white;
+  color:#5b3a1e;
+  font-family:inherit;
+  font-size:16px;
+  line-height:1.8;
+  resize:vertical;
+}
+
+textarea:focus{
+  outline:none;
+  border-color:#bea1e6;
+  box-shadow:0 0 0 3px rgba(190,161,230,0.18);
+}
+
+.action-buttons{
+  width:96%;
+  max-width:570px;
+  margin:18px auto 0;
+}
+
+.action-buttons button{
+  display:block;
+  width:92%;
+  max-width:410px;
+  margin:10px auto;
+}
+
+.btn-next{
+  background:linear-gradient(
+    135deg,
+    #9b86dd,
+    #d098d5
+  );
+}
+
+.btn-copy{
+  background:linear-gradient(
+    135deg,
+    #7088d8,
+    #9a83df,
+    #d49ada
+  );
+}
+
+.btn-clear{
+  background:linear-gradient(
+    135deg,
+    #e6b8c8,
+    #d6a9d8
+  );
+}
+
+.btn-back{
+  background:linear-gradient(
+    135deg,
+    #ffbe73,
+    #f6a65d
+  );
+}
+
+.reflection-box{
+  width:96%;
+  max-width:570px;
+  margin:22px auto 14px;
+  padding:18px 16px;
+  background:#f9f5ff;
+  border-radius:22px;
+  color:#795d7b;
+  font-size:16px;
+  line-height:1.9;
+}
+
+.small-note{
+  margin-top:14px;
+  color:#9a7a5c;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.important-box{
+  width:96%;
+  max-width:570px;
+  margin:18px auto 0;
+  padding:14px 16px;
+  background:#fff8fc;
+  border-radius:20px;
+  color:#8a6d58;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.hidden{
+  display:none !important;
+}
+
+@media(max-width:480px){
+  body{
+    padding:16px 10px 32px;
+  }
+
+  .main-card{
+    width:97%;
+    padding:21px 11px 25px;
+  }
+
+  h1{
+    font-size:23px;
+  }
+
+  .intro{
+    font-size:15px;
+  }
+
+  .theme-title,
+  .answer-title{
+    font-size:17px;
+  }
+
+  .theme-buttons button{
+    width:46%;
+    padding:13px 8px;
+    font-size:14px;
+  }
+
+  .theme-buttons .btn-all{
+    width:94%;
+  }
+
+  .question-text{
+    font-size:18px;
+  }
+
+  textarea{
+    width:98%;
+    font-size:16px;
+  }
+
+  .action-buttons button{
+    width:94%;
+    font-size:16px;
+  }
+
+  .reflection-box{
+    font-size:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="main-card">
+
+  <h1>
+    🌿 私にもどる質問
+  </h1>
+
+  <p class="intro">
+    答えを探すためではなく<br>
+    今の自分の気持ちに気づくための質問です😊<br><br>
+
+    気になるテーマを選んで<br>
+    心に浮かんだことを書いてみよう🌈
+  </p>
+
+
+  <!-- テーマを選ぶ -->
+  <div class="theme-box">
+
+    <div class="theme-title">
+      今、気になるテーマを選んでね😊
+    </div>
+
+    <div class="theme-buttons">
+
+      <button
+        class="btn-feeling"
+        data-theme="feeling"
+        onclick="chooseTheme('feeling', this)"
+      >
+        💗 今の気持ち
+      </button>
+
+      <button
+        class="btn-patience"
+        data-theme="patience"
+        onclick="chooseTheme('patience', this)"
+      >
+        🌿 我慢していること
+      </button>
+
+      <button
+        class="btn-expectation"
+        data-theme="expectation"
+        onclick="chooseTheme('expectation', this)"
+      >
+        🫧 人の期待
+      </button>
+
+      <button
+        class="btn-wish"
+        data-theme="wish"
+        onclick="chooseTheme('wish', this)"
+      >
+        🌈 本当の願い
+      </button>
+
+      <button
+        class="btn-fear"
+        data-theme="fear"
+        onclick="chooseTheme('fear', this)"
+      >
+        🌙 不安や怖さ
+      </button>
+
+      <button
+        class="btn-self"
+        data-theme="self"
+        onclick="chooseTheme('self', this)"
+      >
+        ✨ 今の私
+      </button>
+
+      <button
+        class="btn-all"
+        data-theme="all"
+        onclick="chooseTheme('all', this)"
+      >
+        🐾 チャッピーにおまかせ
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 質問表示 -->
+  <div
+    id="questionArea"
+    class="question-area hidden"
+  >
+
+    <div class="question-label">
+      今日の「私にもどる質問」
+    </div>
+
+    <div
+      id="questionText"
+      class="question-text"
+    ></div>
+
+  </div>
+
+
+  <!-- 回答 -->
+  <div
+    id="answerBox"
+    class="answer-box hidden"
+  >
+
+    <div class="answer-title">
+      心に浮かんだことを書いてみよう😊
+    </div>
+
+    <div class="answer-hint">
+      きれいにまとめなくても大丈夫。<br>
+      ひとことだけでも、よくわからなくても大丈夫だよ🌿
+    </div>
+
+    <textarea
+      id="answerInput"
+      placeholder="今、心に浮かんだことを書いてね…"
+    ></textarea>
+
+  </div>
+
+
+  <!-- 操作ボタン -->
+  <div
+    id="actionButtons"
+    class="action-buttons hidden"
+  >
+
+    <button
+      class="btn-next"
+      onclick="showNextQuestion()"
+    >
+      🔄 同じテーマでもう一問
+    </button>
+
+    <button
+      class="btn-copy"
+      onclick="copyForChappy()"
+    >
+      🐶 チャッピーGPTへ送る文章をコピー
+    </button>
+
+    <button
+      class="btn-clear"
+      onclick="clearAnswer()"
+    >
+      書いた内容を消す
+    </button>
+
+  </div>
+
+
+  <div
+    id="reflectionBox"
+    class="reflection-box hidden"
+  >
+    すぐに答えが出なくても大丈夫😊<br><br>
+
+    「私は本当はどう感じているんだろう？」と<br>
+    自分に聞いてあげたことが<br>
+    私にもどる最初の一歩です🌱
+  </div>
+
+
+  <button
+    class="btn-back"
+    onclick="goBackMenu()"
+  >
+    🏠 メニューにもどる
+  </button>
+
+
+  <div class="small-note">
+    コピーした文章をチャッピーGPTに貼り付けて<br>
+    一緒に気持ちを整理してみてね🐾
+  </div>
+
+
+  <div class="important-box">
+    答えたくない質問は、飛ばして大丈夫です😊<br>
+    AIからの言葉は答えや正解ではありません。<br>
+    しっくりくる言葉だけ受け取ってね🌿
+  </div>
+
+</div>
+
+
+<script>
+
+/* 質問集 */
+const questionGroups = {
+
+  feeling: [
+    "今、いちばん心に引っかかっていることは何かな？",
+    "今の気持ちをひとことで表すとしたら？",
+    "本当は誰かに、どんな言葉を聞いてほしい？",
+    "今の私が、いちばんわかってほしいことは何かな？",
+    "今、心の中で言えずにいることはある？",
+    "今日の私に「どうしたの？」と聞いたら、なんて答えるかな？",
+    "今の気持ちに名前をつけるとしたら、どんな名前？",
+    "最近、なんとなくモヤッとしたことは何だった？"
+  ],
+
+  patience: [
+    "本当は嫌なのに、我慢していることはある？",
+    "「私さえ我慢すれば」と思っていることはないかな？",
+    "やめたいのに、続けていることはある？",
+    "本当は誰に、何をわかってほしい？",
+    "無理して笑っていることはないかな？",
+    "今の私が「もう頑張りたくない」と感じていることは何？",
+    "断りたいのに、断れずにいることはある？",
+    "もう少し自分を楽にしてあげるなら、何をやめたい？"
+  ],
+
+  expectation: [
+    "私は今、誰の期待に応えようとしている？",
+    "誰かの「こうあるべき」を背負っていないかな？",
+    "人からどう思われることを、いちばん気にしている？",
+    "誰にも評価されなくても、やってみたいことは何？",
+    "「ちゃんとしなきゃ」は、誰のためだろう？",
+    "誰かをがっかりさせないために、我慢していることはある？",
+    "人の期待を気にしなくていいなら、何を選びたい？",
+    "私は誰に認めてもらいたいと思っている？"
+  ],
+
+  wish: [
+    "私は本当はどうしたい？",
+    "失敗しないとわかっていたら、何をしてみたい？",
+    "誰にも遠慮しなくていいなら、何を選びたい？",
+    "時間もお金も自由に使えたら、何をしたい？",
+    "今の私が、心から欲しいものは何かな？",
+    "本当は、どんな毎日を過ごしたい？",
+    "やらなきゃではなく、やってみたいことは何？",
+    "願いがひとつ叶うなら、今の私は何を願う？"
+  ],
+
+  fear: [
+    "私は今、何が起きることを怖がっている？",
+    "うまくいかなかったら、何が困ると思っている？",
+    "本当は何を失うことが怖い？",
+    "その不安は、今起きていること？それとも未来の想像かな？",
+    "もし失敗しても大丈夫だとしたら、何をしてみたい？",
+    "今の不安に「大丈夫だよ」と言うなら、どんな言葉をかける？",
+    "怖い気持ちの奥には、どんな願いが隠れている？",
+    "今すぐ答えを出さなくてもいいとしたら、少し安心できる？"
+  ],
+
+  self: [
+    "今日の私が選びたいことは何？",
+    "今の私に必要なのは、頑張ること？休むこと？",
+    "今の私が、自分にしてあげたいことは何？",
+    "今日できる、一番やさしい行動は何かな？",
+    "私は今、自分にどんな言葉をかけてあげたい？",
+    "最近の私が、ちゃんとできていたことは何？",
+    "今の私が手放してもいいものは何かな？",
+    "今の私が大切にしたいことは何？"
+  ]
+
+};
+
+
+let currentTheme = "";
+let currentQuestion = "";
+let lastQuestion = "";
+
+
+/* テーマを選ぶ */
+function chooseTheme(theme, clickedButton){
+
+  currentTheme = theme;
+
+  document
+    .querySelectorAll(".theme-buttons button")
+    .forEach(button => {
+      button.classList.remove("selected-theme");
+    });
+
+  clickedButton.classList.add("selected-theme");
+
+  showQuestion();
+
+  document
+    .getElementById("questionArea")
+    .classList
+    .remove("hidden");
+
+  document
+    .getElementById("answerBox")
+    .classList
+    .remove("hidden");
+
+  document
+    .getElementById("actionButtons")
+    .classList
+    .remove("hidden");
+
+  document
+    .getElementById("reflectionBox")
+    .classList
+    .remove("hidden");
+
+  document
+    .getElementById("questionArea")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+}
+
+
+/* 選んだテーマの質問一覧を取得 */
+function getQuestionList(){
+
+  if(currentTheme === "all"){
+
+    return Object
+      .values(questionGroups)
+      .flat();
+  }
+
+  return questionGroups[currentTheme] || [];
+}
+
+
+/* 質問を表示 */
+function showQuestion(){
+
+  const questions =
+    getQuestionList();
+
+  if(questions.length === 0){
+    return;
+  }
+
+  let nextQuestion = "";
+
+  if(questions.length === 1){
+    nextQuestion = questions[0];
+  }else{
+    do{
+      nextQuestion =
+        questions[
+          Math.floor(
+            Math.random() * questions.length
+          )
+        ];
+    }while(nextQuestion === lastQuestion);
+  }
+
+  currentQuestion = nextQuestion;
+  lastQuestion = nextQuestion;
+
+  document
+    .getElementById("questionText")
+    .textContent = currentQuestion;
+}
+
+
+/* 次の質問 */
+function showNextQuestion(){
+
+  if(!currentTheme){
+    alert(
+      "先にテーマを選んでね😊"
+    );
+    return;
+  }
+
+  const answer =
+    document
+      .getElementById("answerInput")
+      .value
+      .trim();
+
+  if(answer){
+
+    const changeQuestion =
+      confirm(
+        "書いた内容を消して、次の質問を表示しても大丈夫？"
+      );
+
+    if(!changeQuestion){
+      return;
+    }
+  }
+
+  document
+    .getElementById("answerInput")
+    .value = "";
+
+  showQuestion();
+
+  document
+    .getElementById("questionArea")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+}
+
+
+/* テーマ名を取得 */
+function getThemeName(){
+
+  const themeNames = {
+    feeling:"今の気持ち",
+    patience:"我慢していること",
+    expectation:"人の期待",
+    wish:"本当の願い",
+    fear:"不安や怖さ",
+    self:"今の私",
+    all:"チャッピーにおまかせ"
+  };
+
+  return themeNames[currentTheme] || "私にもどる質問";
+}
+
+
+/* チャッピーGPTへ送る文章をコピー */
+function copyForChappy(){
+
+  if(!currentQuestion){
+    alert(
+      "先にテーマを選んで、質問を表示してね😊"
+    );
+    return;
+  }
+
+  const answer =
+    document
+      .getElementById("answerInput")
+      .value
+      .trim();
+
+  if(!answer){
+    alert(
+      "質問を読んで、心に浮かんだことを書いてみてね😊"
+    );
+    return;
+  }
+
+  let text = "";
+
+  text +=
+    "私にもどる質問に答えてみたよ🌿\n\n";
+
+  text +=
+    `【テーマ】\n${getThemeName()}\n\n`;
+
+  text +=
+    `【質問】\n${currentQuestion}\n\n`;
+
+  text +=
+    `【今、心に浮かんだこと】\n${answer}\n\n`;
+
+  text +=
+    "書いたことを否定したり、すぐに答えを出したりせず、まずは今の私の気持ちをやさしく受け止めてください😊\n\n";
+
+  text +=
+    "そのうえで、私が本当はどう感じているのか、自分の気持ちに気づいて私にもどれるように、決めつけずにやさしく短く話してください🌈";
+
+  navigator.clipboard
+    .writeText(text.trim())
+    .then(() => {
+      alert(
+        "チャッピーGPTへ送る文章をコピーしたよ🐾"
+      );
+    })
+    .catch(() => {
+      fallbackCopy(text.trim());
+    });
+}
+
+
+/* 通常のコピーができなかった場合 */
+function fallbackCopy(text){
+
+  const temp =
+    document.createElement("textarea");
+
+  temp.value = text;
+
+  temp.style.position = "fixed";
+  temp.style.left = "-9999px";
+  temp.style.top = "0";
+
+  document.body.appendChild(temp);
+
+  temp.focus();
+  temp.select();
+
+  try{
+    document.execCommand("copy");
+
+    alert(
+      "チャッピーGPTへ送る文章をコピーしたよ🐾"
+    );
+  }catch(error){
+    alert(
+      "コピーできなかったよ。もう一度試してね🐾"
+    );
+  }
+
+  document.body.removeChild(temp);
+}
+
+
+/* 書いた内容を消す */
+function clearAnswer(){
+
+  const answerInput =
+    document.getElementById("answerInput");
+
+  if(!answerInput.value.trim()){
+    alert(
+      "今は書いた内容がないよ😊"
+    );
+    return;
+  }
+
+  const result =
+    confirm(
+      "書いた内容を消しても大丈夫？"
+    );
+
+  if(!result){
+    return;
+  }
+
+  answerInput.value = "";
+  answerInput.focus();
+}
+
+
+/* メニューへ戻る */
+function goBackMenu(){
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const from =
+    params.get("from");
+
+  if(from === "set"){
+    location.href =
+      "https://chappy-sally.github.io/chappy-sally-anshin-navi-set/";
+  }else{
+    location.href = "index.html";
+  }
+}
+
+</script>
+
+</body>
+</html>
