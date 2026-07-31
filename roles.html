@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>私が思い込んでいる役割｜チャッピー＆サリー</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+  background:#fff0f5;
+  color:#6b4b2a;
+  text-align:center;
+  margin:0;
+  padding:20px 14px 40px;
+}
+
+.main-card{
+  width:94%;
+  max-width:680px;
+  margin:0 auto;
+  padding:24px 16px 28px;
+  background:rgba(255,255,255,0.94);
+  border-radius:28px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h1{
+  margin:0 0 14px;
+  color:#6b4b2a;
+  font-size:28px;
+  line-height:1.5;
+}
+
+.intro{
+  margin:0 auto 20px;
+  color:#7b5b39;
+  font-size:17px;
+  line-height:1.8;
+}
+
+.role-box{
+  width:96%;
+  max-width:570px;
+  margin:14px auto;
+  padding:18px 14px;
+  background:#fffafc;
+  border-radius:22px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.role-title{
+  margin-bottom:8px;
+  color:#6b4b2a;
+  font-size:18px;
+  font-weight:bold;
+  line-height:1.5;
+}
+
+.role-hint{
+  margin-bottom:10px;
+  color:#9a7a5c;
+  font-size:14px;
+  line-height:1.7;
+}
+
+textarea{
+  display:block;
+  width:94%;
+  min-height:100px;
+  margin:0 auto;
+  padding:14px 16px;
+  border:2px solid #e7c8ef;
+  border-radius:18px;
+  background:white;
+  color:#5b3a1e;
+  font-family:inherit;
+  font-size:16px;
+  line-height:1.7;
+  resize:vertical;
+}
+
+textarea:focus{
+  outline:none;
+  border-color:#c8a3eb;
+  box-shadow:0 0 0 3px rgba(200,163,235,0.18);
+}
+
+.reflection-box{
+  width:96%;
+  max-width:570px;
+  margin:22px auto 14px;
+  padding:18px 16px;
+  background:linear-gradient(
+    135deg,
+    #f8efff,
+    #fff5f9
+  );
+  border-radius:22px;
+  color:#775779;
+  font-size:16px;
+  line-height:1.9;
+}
+
+button{
+  width:90%;
+  max-width:390px;
+  margin:8px auto;
+  padding:15px 18px;
+  border:none;
+  border-radius:28px;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  line-height:1.5;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+button:active{
+  transform:scale(0.98);
+}
+
+.btn-copy{
+  background:linear-gradient(
+    135deg,
+    #7c91df,
+    #a884e3,
+    #d89ed7
+  );
+}
+
+.btn-clear{
+  background:linear-gradient(
+    135deg,
+    #e6b8c8,
+    #d6a9d8
+  );
+}
+
+.btn-back{
+  background:linear-gradient(
+    135deg,
+    #ffbe73,
+    #f6a65d
+  );
+}
+
+.small-note{
+  margin-top:14px;
+  color:#9a7a5c;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.important-box{
+  width:96%;
+  max-width:570px;
+  margin:18px auto 0;
+  padding:14px 16px;
+  background:#fff8fc;
+  border-radius:20px;
+  color:#8a6d58;
+  font-size:14px;
+  line-height:1.8;
+}
+
+@media(max-width:480px){
+  body{
+    padding:16px 10px 32px;
+  }
+
+  .main-card{
+    width:97%;
+    padding:21px 11px 25px;
+  }
+
+  h1{
+    font-size:23px;
+  }
+
+  .intro{
+    font-size:15px;
+  }
+
+  .role-title{
+    font-size:17px;
+  }
+
+  textarea{
+    width:97%;
+    font-size:16px;
+  }
+
+  button{
+    width:94%;
+    font-size:16px;
+  }
+
+  .reflection-box{
+    font-size:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="main-card">
+
+  <h1>
+    🌿 私が思い込んでいる役割
+  </h1>
+
+  <p class="intro">
+    「○○だから、こうしてくれるはず」<br>
+    「私だから、こうしなきゃ」<br><br>
+
+    知らないうちに決めていた役割を<br>
+    やさしく書き出してみよう😊
+  </p>
+
+
+  <!-- お母さん -->
+  <div class="role-box">
+
+    <div class="role-title">
+      お母さんだから…
+    </div>
+
+    <div class="role-hint">
+      どんなことをしてくれるはず、してほしいと思ってる？
+    </div>
+
+    <textarea
+      id="mother"
+      placeholder="例：いつでも味方でいてくれるはず…"
+    ></textarea>
+
+  </div>
+
+
+  <!-- お父さん -->
+  <div class="role-box">
+
+    <div class="role-title">
+      お父さんだから…
+    </div>
+
+    <div class="role-hint">
+      どんなふうでいてほしいと思ってる？
+    </div>
+
+    <textarea
+      id="father"
+      placeholder="例：家族を守ってくれるはず…"
+    ></textarea>
+
+  </div>
+
+
+  <!-- 娘 -->
+  <div class="role-box">
+
+    <div class="role-title">
+      娘だから…
+    </div>
+
+    <div class="role-hint">
+      自分は何をしなきゃいけないと思ってる？
+    </div>
+
+    <textarea
+      id="daughter"
+      placeholder="例：親の期待に応えなきゃ…"
+    ></textarea>
+
+  </div>
+
+
+  <!-- 旦那さん -->
+  <div class="role-box">
+
+    <div class="role-title">
+      旦那さんだから…
+    </div>
+
+    <div class="role-hint">
+      何をしてくれるべきだと思ってる？
+    </div>
+
+    <textarea
+      id="husband"
+      placeholder="例：私の気持ちを分かってくれるはず…"
+    ></textarea>
+
+  </div>
+
+
+  <!-- 私 -->
+  <div class="role-box">
+
+    <div class="role-title">
+      私だから…
+    </div>
+
+    <div class="role-hint">
+      どんなふうに頑張らなきゃと思ってる？
+    </div>
+
+    <textarea
+      id="myself"
+      placeholder="例：私がしっかりしなきゃ…"
+    ></textarea>
+
+  </div>
+
+
+  <!-- お金 -->
+  <div class="role-box">
+
+    <div class="role-title">
+      お金は…
+    </div>
+
+    <div class="role-hint">
+      どうしたら来るものだと思ってる？
+    </div>
+
+    <textarea
+      id="money"
+      placeholder="例：頑張って働かないと入ってこない…"
+    ></textarea>
+
+  </div>
+
+
+  <!-- その他 -->
+  <div class="role-box">
+
+    <div class="role-title">
+      その他の「○○だから…」
+    </div>
+
+    <div class="role-hint">
+      思いついた人や立場、お仕事などを自由に書いてね😊
+    </div>
+
+    <textarea
+      id="other"
+      placeholder="例：長女だから…、上司だから…、友だちだから…"
+    ></textarea>
+
+  </div>
+
+
+  <div class="reflection-box">
+    書いてくれたことは<br>
+    本当に今も変わらないことなのかな？😊<br><br>
+
+    もしかしたら<br>
+    相手や自分の役割を<br>
+    知らないうちに決めていただけかもしれません🌱<br><br>
+
+    「本当は違うかも」<br>
+    そんな見方も、そっと残してみてね🌈
+  </div>
+
+
+  <button
+    class="btn-copy"
+    onclick="copyForChappy()"
+  >
+    🐶 チャッピーGPTへ送る文章をコピー
+  </button>
+
+
+  <button
+    class="btn-clear"
+    onclick="clearAnswers()"
+  >
+    書いた内容を消す
+  </button>
+
+
+  <button
+    class="btn-back"
+    onclick="goBackMenu()"
+  >
+    🏠 メニューにもどる
+  </button>
+
+
+  <div class="small-note">
+    コピーした文章をチャッピーGPTに貼り付けて<br>
+    一緒にやさしく見直してみてね🐾
+  </div>
+
+
+  <div class="important-box">
+    書きたくない項目は空欄のままで大丈夫です😊<br>
+    答えや正解を見つけるためではなく<br>
+    今の自分の思いに気づくために使ってね🌿
+  </div>
+
+</div>
+
+
+<script>
+
+/* 入力内容を取得 */
+function getValue(id){
+  return document
+    .getElementById(id)
+    .value
+    .trim();
+}
+
+
+/* 空欄ではない項目だけ文章に追加 */
+function addAnswer(lines, title, value){
+  if(value){
+    lines.push(`【${title}】`);
+    lines.push(value);
+    lines.push("");
+  }
+}
+
+
+/* チャッピーGPTへ送る文章をコピー */
+function copyForChappy(){
+
+  const mother =
+    getValue("mother");
+
+  const father =
+    getValue("father");
+
+  const daughter =
+    getValue("daughter");
+
+  const husband =
+    getValue("husband");
+
+  const myself =
+    getValue("myself");
+
+  const money =
+    getValue("money");
+
+  const other =
+    getValue("other");
+
+
+  if(
+    !mother &&
+    !father &&
+    !daughter &&
+    !husband &&
+    !myself &&
+    !money &&
+    !other
+  ){
+    alert(
+      "思いつくことを、ひとつだけでも書いてみてね😊"
+    );
+    return;
+  }
+
+
+  const lines = [];
+
+  lines.push(
+    "私が知らないうちに決めていた役割について書いてみたよ🌿"
+  );
+
+  lines.push("");
+
+
+  addAnswer(
+    lines,
+    "お母さんだから…",
+    mother
+  );
+
+  addAnswer(
+    lines,
+    "お父さんだから…",
+    father
+  );
+
+  addAnswer(
+    lines,
+    "娘だから…",
+    daughter
+  );
+
+  addAnswer(
+    lines,
+    "旦那さんだから…",
+    husband
+  );
+
+  addAnswer(
+    lines,
+    "私だから…",
+    myself
+  );
+
+  addAnswer(
+    lines,
+    "お金は…",
+    money
+  );
+
+  addAnswer(
+    lines,
+    "その他の○○だから…",
+    other
+  );
+
+
+  lines.push(
+    "書いたことを否定したり、思い込みだと決めつけたりせず、まずは私の気持ちを受け止めてください😊"
+  );
+
+  lines.push("");
+
+  lines.push(
+    "そのうえで、"
+  );
+
+  lines.push(
+    "「それは本当に今も変わらないことなのかな？」"
+  );
+
+  lines.push(
+    "「自分で役割を決めていただけで、本当は違う見方もあるかもしれないね」"
+  );
+
+  lines.push(
+    "という視点から、私が少し楽になれるように、やさしく短く話してください🌈"
+  );
+
+
+  const text =
+    lines.join("\n").trim();
+
+
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert(
+        "チャッピーGPTへ送る文章をコピーしたよ🐾"
+      );
+    })
+    .catch(() => {
+      fallbackCopy(text);
+    });
+}
+
+
+/* コピーできなかった場合 */
+function fallbackCopy(text){
+
+  const temp =
+    document.createElement("textarea");
+
+  temp.value = text;
+
+  temp.style.position = "fixed";
+  temp.style.left = "-9999px";
+  temp.style.top = "0";
+
+  document.body.appendChild(temp);
+
+  temp.focus();
+  temp.select();
+
+  try{
+    document.execCommand("copy");
+
+    alert(
+      "チャッピーGPTへ送る文章をコピーしたよ🐾"
+    );
+  }catch(error){
+    alert(
+      "コピーできなかったよ。もう一度試してね🐾"
+    );
+  }
+
+  document.body.removeChild(temp);
+}
+
+
+/* 入力内容を消す */
+function clearAnswers(){
+
+  const result =
+    confirm(
+      "書いた内容を全部消しても大丈夫？"
+    );
+
+  if(!result){
+    return;
+  }
+
+  const ids = [
+    "mother",
+    "father",
+    "daughter",
+    "husband",
+    "myself",
+    "money",
+    "other"
+  ];
+
+  ids.forEach(id => {
+    document.getElementById(id).value = "";
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+/* メニューへ戻る */
+function goBackMenu(){
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const from =
+    params.get("from");
+
+  if(from === "set"){
+    location.href =
+      "https://chappy-sally.github.io/chappy-sally-anshin-navi-set/";
+  }else{
+    location.href = "index.html";
+  }
+}
+
+</script>
+
+</body>
+</html>
